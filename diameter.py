@@ -2,8 +2,6 @@ import numpy as np
 
 def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P,mu_l,mu_v,n,V,h,A,B,C,x,v,mu,Vm,f,delta_L,L):
 
-
-
     for i in range(n):
         if i<(n-1):
             # Coefficients of the quality polynomium
@@ -26,8 +24,10 @@ def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P,mu_l,mu_v,n,V,h,A,B,C,x,v,
 
             # delta_L: length of the section of the tube
             delta_L[0,i+1] = (d*2*v[0,i+1]/(f[0,i+1]*Vm[0,i+1]**2))*((P[i] - P[i+1])*10**5 - m_dot*(V[0,i+1] - V[0,i])/Area)
+            
+            # In case the flow gets the speed of sound (in this case, for greater values of delta_L, the entropy becomes negative)
             if delta_L[0,i+1] < 0:
-                print('Select another diameter.') # In case of blocked flow
+                print('Select another diameter.') 
                 break
             else:
                 L[0,i+1] = delta_L[0,i+1] + L[0,i] # Add delta_L to the total length of the tube
