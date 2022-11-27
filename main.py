@@ -1,12 +1,39 @@
-
-#comment
-
 # Basic library
 import numpy as np
 # Thermodynamical properties functions
 from thermo_props import *
 # Diameter calculator
 from diameter import *
+# Equilibrium temperatures calculator
+from Eq_temps import *
+
+
+####
+# Project requirements (heat pump in this case)
+Q_H = 57000 #W
+# Temperature of the hot and cold sources
+t_h = 35 #oC
+t_l = 0 #oC
+T_H = t_h + 273.15 #K
+T_L = t_l + 273.15 #K
+
+####
+# Objective: determine evaporation and condensing temperatures
+
+# Initial guess: condensing temperature and thermal conductance of the evaporator 
+t_cond = 40 #oC
+UA_L = 15000 #W/K
+
+# Recursive determination of temperatures
+t_cond, t_evap = Eq_temps(UA_L,t_cond,t_l,t_h,Q_H)
+
+# Results
+print('Condensing temperature: %.3f oC' %(t_cond))
+print('Evaporating temperature: %.3f oC' %(t_evap))
+
+# Thermal conductance of the condenser
+UA_H = Q_H/(t_cond - t_h)
+print('Thermal conductance of the condenser: %.3f W/K' %UA_H)
 
 # Initial data (inform here)
 P_evap = 3 #bar
