@@ -27,7 +27,8 @@ def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P,mu_l,mu_v,n,V,h,A,B,C,x,v,
             
             # In case the flow gets the speed of sound (in this case, for greater values of delta_L, the entropy becomes negative)
             if delta_L[0,i+1] < 0:
-                print('Select another diameter.') 
+                print('Select another diameter.')
+                L_final = 0
                 break
             else:
                 L[0,i+1] = delta_L[0,i+1] + L[0,i] # Add delta_L to the total length of the tube
