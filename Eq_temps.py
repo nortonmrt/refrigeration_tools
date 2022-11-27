@@ -1,13 +1,18 @@
 import numpy as np
+from compressor_curve import *
 
 def Eq_temps(UA_L,t_cond,t_l,t_h,Q_H):
 
-    # Compressor curves: valid for tevap [-10;10] and tcond [25;50] oC
-    # w: coefficients of the absorbed heat polynomial (Q_L)
-    w = np.array([78540.29115339671,2780.986982078423,-563.2636894563122,29.251543823996016,-17.54524350689165,-1.1711274078956313])
-    # u: coefficients of the compressor consumption polynomial (W)
-    u = np.array([-335.4488499347664,-279.8049855408514,313.9176183510909,-4.9503081806191895,8.244352628840193,-1.534917330048479])
-    # y: coefficients of the rejected heat polynomial (Q_H)
+    # # Compressor curves: valid for tevap [-10;10] and tcond [25;50] oC
+    # # w: coefficients of the absorbed heat polynomial (Q_L)
+    # w = np.array([78540.29115339671,2780.986982078423,-563.2636894563122,29.251543823996016,-17.54524350689165,-1.1711274078956313])
+    # # u: coefficients of the compressor consumption polynomial (W)
+    # u = np.array([-335.4488499347664,-279.8049855408514,313.9176183510909,-4.9503081806191895,8.244352628840193,-1.534917330048479])
+    # # y: coefficients of the rejected heat polynomial (Q_H)
+    # y = u + w
+
+    # Function to generate the compressor curves, based on a compressor datasheet
+    w, u = compressor_curve()
     y = u + w
 
     for i in range(15):
