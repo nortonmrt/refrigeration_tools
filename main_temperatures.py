@@ -6,14 +6,12 @@ from thermo_props import *
 # Equilibrium temperatures calculator
 from Eq_temps import *
 
-
 ####
 # Project requirements (heat pump in this case)
 Q_H = 57000 #W
 # Temperature of the hot and cold sources. t = [oC] and T = [K]
 t_h = 35 #oC
 t_l = 0 #oC
-
 
 ####
 # Objective: determine evaporation and condensing temperatures
@@ -52,4 +50,4 @@ h2 = PropsSI("H","T",T_cond,"S",s2,'R290')
 h3 = PropsSI("H","P",P_evap,"Q",0,'R290')
 
 m_dot = Q_H/(h2 - h3)
-print(m_dot)
+print('Mass flow rate of refrigerant: %.3f kg/s' %m_dot)
