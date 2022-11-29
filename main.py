@@ -33,23 +33,12 @@ v_l, v_v, h_l, h_v, mu_l, mu_v = Props(T,P)
 
 # empty vectors
 n = np.size(P)
-V = np.zeros((1,n))
-h = np.zeros((1,n))
-A = np.zeros((1,n))
-B = np.zeros((1,n))
-C = np.zeros((1,n))
-x = np.zeros((1,n))
-v = np.zeros((1,n))
-mu = np.zeros((1,n))
-Vm = np.zeros((1,n))
-f = np.zeros((1,n))
-delta_L = np.zeros((1,n))
-L = np.zeros((1,n))
+
+V, h, A, B, C, x, v, mu, Vm, f, delta_L, L = np.zeros([12,1,n])
 
 V[0,0] = v_l[0]*Q
 h[0,0] = h_l[0]
 
 # Calling the function
 L_final = diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P,mu_l,mu_v,n,V,h,A,B,C,x,v,mu,Vm,f,delta_L,L)
-
 
