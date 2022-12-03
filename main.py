@@ -10,7 +10,7 @@ from diameter import *
 P_evap = 3 #bar
 P_cond = 13 #bar
 m_dot = 0.00282 #kg/s
-d = 0.047 #in
+d = np.array([0.036, 0.047, 0.055, 0.063]) #in
 
 # Unit conversion/extra calculations
 d = d*0.0254 #m
@@ -36,9 +36,12 @@ n = np.size(P)
 
 V, h, A, B, C, x, v, mu, Vm, f, delta_L, L = np.zeros([12,1,n])
 
-V[0,0] = v_l[0]*Q
-h[0,0] = h_l[0]
-
 # Calling the function
-L_final = diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P,mu_l,mu_v,n,V,h,A,B,C,x,v,mu,Vm,f,delta_L,L)
+
+for j in range(np.size(d)):
+    L_final = diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B, C, x, v, mu, Vm, f, delta_L, L, j)
+    if L_final != 0:
+            print('Tube length: %.3f m' %(L_final))
+            print('Capillary tube diameter: %.3f in' %(d[j]/0.0254))
+            break
 
