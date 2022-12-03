@@ -1,6 +1,5 @@
 # Basic library
 import numpy as np
-from CoolProp.CoolProp import PropsSI
 # Thermodynamical properties functions
 from thermo_props import *
 # Diameter calculator
