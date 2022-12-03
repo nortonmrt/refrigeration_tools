@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/108631583/205446544-087a9940-3803-4baf-bcd9-3a9bf92983b9.png)
 # Capillary Tube
 A simple routine to estimate the length of a capillary tube, for a refrigeration system using R-290 (propane). The input data is:
 - Mass flow rate of refrigerant (kg/s);
