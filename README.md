@@ -6,7 +6,7 @@ Simple routines to get valuable information for the project of refrigeration sys
 ## Capillary tube
 This routine estimate the length of a capillary tube, for a refrigeration system using R-290 (propane). The input data is:
 - Mass flow rate of refrigerant (kg/s);
-- Evaporation/condensation pressure (bar);
+- Evaporation/condensing pressure (bar);
 
 There are four common capillary diameters already implemented (units in inches). More diameteres can be added by the user, if necessary. The routine evaluate each one of the diameters, getting the smaller one for which the system works properly.
 
