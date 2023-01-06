@@ -37,4 +37,4 @@ def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B
                 L_final = L[0,-1]
 
 
-    return L_final
+    return (L_final,delta_L)

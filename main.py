@@ -38,7 +38,7 @@ V, h, A, B, C, x, v, mu, Vm, f, delta_L, L = np.zeros([12,1,n])
 # Calling the function
 
 for j in range(np.size(d)):
-    L_final = diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B, C, x, v, mu, Vm, f, delta_L, L, j)
+    L_final,h = diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B, C, x, v, mu, Vm, f, delta_L, L, j)
     if L_final != 0:
             print('Tube length: %.3f m' %(L_final))
             print('Capillary tube diameter: %.3f in' %(d[j]/0.0254))
