@@ -1,5 +1,3 @@
-![image](https://user-images.githubusercontent.com/108631583/205446708-01bdb6ce-a76e-47a3-ad26-2e4e9b1ee092.png)
-
 # Refrigeration tools
 Simple routines to get valuable information for the project of refrigeration systems. There are two main codes, one for determining an estimated length of a capillary tube (```main```), and the other one to determine the evaporating and condensing temperatures, given the requirements of the system (```main_temperatures```). Both are detailed below.
 
@@ -66,3 +64,6 @@ m_dot = Q_H/(h2 - h3)
 The information obtained by this second routine can even be evaluated in the previous one (to determine the length of the capillary tube for this system). In future versions both functionalities will be implemented in a single routine.
 
 Obs: the author does not take responsibility for the usage of this routine in real projects.
+
+Datasheet: 
+https://productsapi.embraco.com/datasheet/compressor/ESX55CBC/518100011/?kit_number=5&standard=ASHRAE&test_application=LBP&refrigerant=R-600a&compressor_speed=3600&unit_system=w&measurement_system=metric&language=pt-BR

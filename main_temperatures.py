@@ -12,6 +12,7 @@ Q_H = 400 #W
 # Temperature of the hot and cold sources. t = [oC] and T = [K]
 t_h = 35 #oC
 t_l = 0 #oC
+fluid = 'R290'
 
 ####
 # Objective: determine evaporation and condensing temperatures
@@ -43,11 +44,11 @@ P_cond = Press(T_cond)
 
 # mass flow rate of refrigerant:
 # there's no equation for properties at the maximum temperature, so we use CoolProp 
-h1 = PropsSI("H","T",T_evap,"Q",1,'R290')
-s1 = PropsSI("S","T",T_evap,"Q",1,'R290')
+h1 = PropsSI("H","T",T_evap,"Q",1,fluid)
+s1 = PropsSI("S","T",T_evap,"Q",1,fluid)
 s2 = s1
-h2 = PropsSI("H","T",T_cond,"S",s2,'R290')
-h3 = PropsSI("H","P",P_evap,"Q",0,'R290')
+h2 = PropsSI("H","T",T_cond,"S",s2,fluid)
+h3 = PropsSI("H","P",P_evap,"Q",0,fluid)
 
 m_dot = Q_H/(h2 - h3)
 print('Mass flow rate of refrigerant: %.6f kg/s' %m_dot)

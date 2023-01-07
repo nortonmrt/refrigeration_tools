@@ -28,9 +28,3 @@ def compressor_curve():
     u, _ = curve_fit(consumption, x_data, W_comp)
 
     return w, u
-
-#w0, w1, w2, w3, w4, w5 = popt
-
-
-
-
