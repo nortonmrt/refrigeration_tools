@@ -8,7 +8,7 @@ def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B
 
     for i in range(n):
         if i<(n-1):
-            # Coefficients of the quality polynomium
+            # Coefficients of the quality polynomial
             A[0,i+1] = 0.5*Q[j]**2*(v_v[i+1] - v_l[i+1])**2
             B[0,i+1] = (h_v[i+1] - h_l[i+1]) + v_l[i+1]*(v_v[i+1] - v_l[i+1])*Q[j]**2
             C[0,i+1] = (h_l[i+1] - h[0,i]) + 0.5*Q[j]**2*(v_l[i+1]**2) - 0.5*(V[0,i]**2)
@@ -38,4 +38,4 @@ def diameter(v_l, v_v, h_l, h_v, Q, d, Area, m_dot, P, mu_l, mu_v, n, V, h, A, B
                 L_final = L[0,-1]
 
 
-    return (L_final,mu)
+    return L_final

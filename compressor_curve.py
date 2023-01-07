@@ -3,7 +3,7 @@ from scipy.optimize import curve_fit
 
 def compressor_curve():
 
-    # Compressor chosen: Embraco ESX55C
+    # Compressor chosen: Embraco ESX55C (suited only for R600a - isobutane)
     # Datasheet: 
     # https://productsapi.embraco.com/datasheet/compressor/ESX55CBC/518100011/?kit_number=5&standard=ASHRAE&test_application=LBP&refrigerant=R-600a&compressor_speed=3600&unit_system=w&measurement_system=metric&language=pt-BR
 
