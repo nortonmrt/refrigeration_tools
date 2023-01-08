@@ -21,8 +21,8 @@ Finally, adding all the lengths, it is possible to obtain the total length of th
 
 An important observation is that the length of the section may become negative (case in which the flow becomes supersonic). The reason is, as the cross section of the tube is constant, the velocity of the flow only increases beyond the speed of sound for a negative entropy, which leads to a negative length of the tube. In case that happens, the routine select the next higher tube diameter and restart the process.
 
-## Equilibrium of the condensing and evaporation temperatures (main_temperatures)
-In this case, the mass flow rate of refrigerant, the condensing and evaporating temperatures and the thermal conductance of the heat exchangers are obtained. The code is written as the project requirement is the heat rejected by the condenser (heat pump), but in further versions it will be possible to have the heat absorbed bu the evaporator as a requirement. The input data is:
+## Equilibrium of the condensing and evaporating temperatures (main_temperatures)
+In this case, the mass flow rate of refrigerant, the condensing and evaporating temperatures and the thermal conductance of the heat exchangers are obtained. The code is written as the project requirement is the heat rejected by the condenser (heat pump), but in further versions it will be possible to have the heat absorbed by the evaporator as a requirement. The input data is:
 - An estimative of the condensing temperature (in oC);
 - The heat rejected by the condenser (in W);
 - An estimative of the thermal conductance of the evaporator (in W/K);
